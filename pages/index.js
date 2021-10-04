@@ -1,15 +1,7 @@
-import { useEffect } from "react";
-import get from "../services/api";
+import Store from "../components/Store";
 
 const Home = () => {
-  useEffect(() => {
-    const fetchAPI = async () => {
-      const data = await get();
-      return data;
-    };
-
-    fetchAPI();
-  }, []);
-  return <div></div>;
+  return <Store />;
 };
+
 export default Home;
