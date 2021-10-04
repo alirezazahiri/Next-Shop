@@ -1,7 +1,12 @@
-import Store from "../components/Store";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Home = () => {
-  return <Store />;
+  const router = useRouter()
+  useEffect(() => {
+    router.push("/products")
+  }, [])
+  return <></>;
 };
 
 export default Home;

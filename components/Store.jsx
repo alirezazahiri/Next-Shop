@@ -1,27 +1,29 @@
 import React, { useEffect } from "react";
 
 // Redux
-import { useDispatch, useSelector } from "react-redux";
-import fetchProducts from "../redux/products/productsAction";
+import { useDispatch /*, useSelector */ } from "react-redux";
+import { fetchProductsSuccess } from "../redux/products/productsAction";
 
-const Store = () => {
-  const { products, loading, error } = useSelector(
-    (state) => state.productsState
-  );
+// Components
+import StorePCard from "./common/StorePCard";
+
+const Store = ({ products }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchProductsSuccess(products));
+    console.log(products)
   }, []);
 
-  if (loading) return "Loading ...";
   return (
     <div>
-      {products.map(({ id, title }) => (
-        <h1 key={id}>{title}</h1>
+      {products && products.map((product) => (
+        <StorePCard key={product.id} {...product} />
       ))}
     </div>
   );
 };
+
+
 
 export default Store;
