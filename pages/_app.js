@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/globals.scss";
 import "tailwindcss/tailwind.css";
 
 // Redux
@@ -7,12 +7,10 @@ import store from "../redux/store";
 import Layout from "../layout/Layout";
 
 function MyApp({ Component, pageProps }) {
-  
   return (
     <Provider store={store}>
       <Layout>
-      <Component {...pageProps} />
-
+        <Component {...pageProps} />
       </Layout>
     </Provider>
   );

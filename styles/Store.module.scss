@@ -1,0 +1,5 @@
+.container {
+    @apply grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1;
+    gap: 25px;
+    padding: 60px 40px 10px;
+}

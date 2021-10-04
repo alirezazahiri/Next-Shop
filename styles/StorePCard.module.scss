@@ -1,0 +1,92 @@
+@import "./variables";
+
+.container {
+    @apply w-full border border-white flex flex-col;
+    background-color: $primary-color;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        box-shadow: darken($secondary-color, 60%) 0px 2px 1px,
+                    darken($secondary-color, 70%) 0px 3px 2px,
+                    darken($secondary-color, 60%) 0px 4px 3px,
+                    darken($secondary-color, 70%) 0px 5px 4px,
+                    darken($secondary-color, 60%) 0px 6px 5px;
+    }
+}
+
+.productImage {
+    width: 300px;
+    height: 240px;
+    margin: 10px auto;
+}
+
+.detailsContainer {
+    background: $secondary-color;
+    font-family: $base-font;
+    h1 {
+        font-size: 18px;
+        font-weight: bold;
+        color: $medium-blue;
+    }
+    p {
+        background: $medium-blue-2;
+        padding: 5px;
+        border-radius: 5px;
+        width: fit-content;
+        font-size: 16px;
+        color: $light-green;
+        transition: all 0.3s ease;
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+}
+
+.textContainer {
+    padding: 10px
+}
+
+.buttonsContainer {
+    @apply flex flex-row justify-between align-middle;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+    button {
+        background: $medium-blue;
+        padding: 5px;
+        border-radius: 5px;
+        color: $secondary-color;
+        line-height: 30px;
+        transition: all 0.3s ease-in-out;
+        &:hover { 
+            background: $medium-blue-2;
+        }
+    }
+    a {
+        padding: 5px;
+        border-radius: 5px;
+        color: $medium-blue;
+        font-size: 16px;
+        &:hover { 
+            color: $medium-blue-2;
+        }
+    }
+}
+
+.smallButton {
+    width: 30px !important;
+    font-size: 1.6rem !important;
+    font-weight: bold;
+    img {
+        width: 20px;
+    }
+}
+
+.actionsContainer {
+    @apply flex;
+    p {
+        background: none;
+        &:hover {
+            color: $medium-blue-2;
+        }
+    }
+}

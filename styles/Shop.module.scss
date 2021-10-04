@@ -1,0 +1,12 @@
+.container {
+    margin-top: 70px;
+    @apply flex flex-row ;
+}
+
+.cardsContainer {
+    width: 58%;
+}
+
+.statusContainer {
+    width: 40%;
+}
