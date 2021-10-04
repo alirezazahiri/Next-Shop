@@ -6,11 +6,11 @@ const Product = () => {
   const { products } = useSelector((state) => state.productsState);
   const router = useRouter();
   const index = Number(router.asPath.split("/").reverse()[0]) - 1;
-  const { title, description, category, price } = products[index];
+  const { image, title, description, category, price } = products[index];
 
   return (
     <div>
-      <img src="" alt="" />
+      <img src={image} alt={title} width={200}/>
       <div>
         <h1>{title}</h1>
         <p>{description}</p>

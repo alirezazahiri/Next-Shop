@@ -12,13 +12,12 @@ const Store = ({ products }) => {
 
   useEffect(() => {
     dispatch(fetchProductsSuccess(products));
-    console.log(products)
   }, []);
 
   return (
     <div>
       {products && products.map((product) => (
-        <StorePCard key={product.id} {...product} />
+        <StorePCard key={product.id} product={product} />
       ))}
     </div>
   );
