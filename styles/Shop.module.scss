@@ -1,12 +1,74 @@
+@import "./variables";
+
 .container {
     margin-top: 70px;
-    @apply flex flex-row ;
+    @apply flex lg:flex-col md:flex-col sm:flex-col;
+    @media (max-width: 640px) {
+        flex-direction: column-reverse;
+    }
 }
 
 .cardsContainer {
-    width: 58%;
+    @apply lg:w-3/5 md:w-full sm:w-full flex flex-col;
+    @media (max-width: 1024px) {
+        margin-top: 20%;
+    }
 }
 
 .statusContainer {
-    width: 40%;
+    font-family: $base-font;
+    background: rgba(0, 0, 0, 0.6);
+    @apply text-center lg:w-2/5 md:w-2/5 sm:w-full text-white p-2 rounded-md;
+    @media (max-width: 640px) {
+        width: 100%;
+    }
+    @media (min-width: 641px){
+        position: fixed;
+        right: 0;
+        top: 70px;
+    }
+    .detailsContainer {
+        div {
+            @apply flex justify-between p-1;
+        }
+    }
+
+    .buttonContainer {
+        @apply flex flex-col p-1;
+        button {
+            @apply w-full;
+        }
+
+        .checkout {
+            background: $medium-blue;
+            color: $secondary-color;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        .clear {
+            color: darken($secondary-color, 40%);
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    .checkoutSuccess {
+        @apply w-full p-1;
+        color: $light-green;
+    }
+
+}
+
+.clearDone {
+    @apply w-full m-auto p-1 fixed top-1/2 text-center;
+    h1 {
+        color: $warn-color; 
+    }
+    a {
+        color: $light-green;
+        text-decoration: underline;
+    }
 }

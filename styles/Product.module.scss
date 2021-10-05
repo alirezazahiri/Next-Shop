@@ -1,0 +1,57 @@
+@import "./variables";
+
+.container {
+    @apply flex flex-col;
+    margin-top: 70px;
+}
+
+.imageContainer {
+    @apply bg-white mx-4 rounded-t-md;
+    img {
+        @apply mx-auto;
+    }
+}
+
+.details {
+    @apply mx-4 p-2;
+    font-family: $base-font;
+    background: $secondary-color;
+    h1 {
+        @apply mt-1;
+        font-size: 18px;
+        font-weight: 400;
+        color: $light-green;
+    }
+    p {
+        @apply mt-1;
+        color: $medium-blue;
+    }
+    h3 {
+        @apply mt-1;
+        color: $medium-blue-2;
+        span {
+            @apply p-1 rounded-md;
+            color: $secondary-color;
+            background: $light-green;
+        }
+    }
+}
+
+.footer {
+    @apply mx-4 rounded-b-md p-2 flex justify-between;
+    font-family: $base-font;
+    background: $secondary-color;
+    p {
+        @apply mt-1;
+        color: $medium-blue;
+    }
+    a {
+        @apply mr-4 p-1 rounded-md;
+        background: $medium-blue;
+        color: $primary-color;
+        &:hover {
+            background: $medium-blue-2;
+            color: $secondary-color;
+        }
+    }
+}

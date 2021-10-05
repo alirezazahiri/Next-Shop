@@ -1,6 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
+
+// next 
 import { useRouter } from "next/router";
+import Link from "next/link"
+import Head from "next/head"
+
+// styles
+import styles from "../styles/Product.module.scss";
 
 const Product = () => {
   const { products } = useSelector((state) => state.productsState);
@@ -9,16 +16,23 @@ const Product = () => {
   const { image, title, description, category, price } = products[index];
 
   return (
-    <div>
-      <img src={image} alt={title} width={200}/>
-      <div>
+    <div className={styles.container}>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <div className={styles.imageContainer}>
+        <img src={image} alt={title} width={200} />
+      </div>
+      <div className={styles.details}>
         <h1>{title}</h1>
         <p>{description}</p>
-        <h3>{category}</h3>
+        <h3>Category: <span>{category}</span></h3>
       </div>
-      <div>
+      <div className={styles.footer}>
         <p>${price}</p>
-        <button onClick={() => router.push("/products")}>back</button>
+        <Link href="/products">
+          <a>Back</a>
+        </Link>
       </div>
     </div>
   );

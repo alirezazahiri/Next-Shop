@@ -14,7 +14,7 @@ import styles from "../styles/Navbar.module.scss";
 const Navbar = () => {
   const state = useSelector((state) => state.shopState);
   return (
-    <header className={styles.container}>
+    <div className={styles.container}>
       <Link href="/products">
         <a>Products</a>
       </Link>
@@ -24,7 +24,7 @@ const Navbar = () => {
           <span>{state.totalCount}</span>
         </a>
       </Link>
-    </header>
+    </div>
   );
 };
 

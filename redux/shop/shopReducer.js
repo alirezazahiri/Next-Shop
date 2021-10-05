@@ -2,7 +2,7 @@ const initialState = {
   selectedItems: [],
   totalPrice: 0,
   totalCount: 0,
-  checkout: false,
+  isCheckout: false,
 };
 
 const calcTotals = (items) => {
@@ -40,7 +40,6 @@ const shopReducer = (state = initialState, action) => {
           ...calcTotals(newItems),
         };
       }
-      console.log("here");
       return state;
     case "INCREASE_ITEM":
       const newItems_i = [...state.selectedItems].map((item) => {
@@ -69,9 +68,9 @@ const shopReducer = (state = initialState, action) => {
         ...calcTotals(newItems_d),
       };
     case "CHECKOUT":
-      return { ...initialState, checkout: true };
+      return { ...initialState, isCheckout: true };
     case "CLEAR":
-      return { ...initialState, selectedItems: [], checkout: false };
+      return { ...initialState, selectedItems: [], isCheckout: false };
     default:
       return state;
   }

@@ -1,93 +1,67 @@
 @import "./variables";
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: $secondary-color;
-    font-family: "Lato", sans-serif;
-    padding: 15px;
-    border: 1px solid silver;
-    margin-bottom: 20px;
-    border-radius: 6px;
+  background: $secondary-color;
+  font-family: $base-font;
+  padding: 15px;
+  border: 1px solid silver;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  @apply flex align-middle justify-between lg:flex-row md:flex-col sm:flex-col;
+}
+
+.productImage {
+  @apply lg:w-1/2 md:w-1/2 sm:w-1/2 md:mx-auto sm:mx-auto;
+  width: 80px;
+}
+
+.data {
+  @apply lg:text-left md:text-center sm:text-center;
+}
+
+.data h3 {
+  color: $medium-blue-2;
+  margin-bottom: 10px;
+}
+
+.data p {
+  color: $light-green;
+  font-weight: bold;
+}
+
+.quantity {
+  background: $medium-blue-2;
+  width: 25px;
+  height: 25px;
+  display: inherit;
+  line-height: 25px;
+  border-radius: 3px;
+  color: $primary-color;
+  font-weight: bold;
+  @apply text-center md:float-left sm:float-left;
+}
+
+.buttonContainer button {
+  background-color: $medium-blue;
+  border: none;
+  color: $primary-color;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 30px;
+  font-size: 1.6rem !important;
+  font-weight: bold;
+  line-height: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 4px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  margin-left: 5px;
+
+  &:hover {
+    background-color: $medium-blue-2;
   }
-  
-  .productImage {
-    width: 80px;
-  }
-  
-  .data {
-    text-align: left;
-  }
-  
-  .data h3 {
-    color: #1a73e8;
-    margin-bottom: 10px;
-  }
-  
-  .data p {
-    color: $light-green;
-    font-weight: bold;
-  }
-  
-  .quantity {
-    background: $medium-blue-2;
-    width: 25px;
-    height: 25px;
-    display: inherit;
-    line-height: 25px;
-    border-radius: 3px;
-    color: $primary-color;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .buttonContainer button {
-    background-color: #1a73e8;
-    border: none;
-    color: $primary-color;
-    height: 30px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    width: 30px;
-    font-size: 1.6rem !important;
-    font-weight: bold;
-    line-height: 30px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 4px 12px -2px,
-      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    margin-left: 5px;
-  }
-  
-  .buttonContainer img {
-    width: 20px;
-  }
-  
-  @media (max-width: 470px) {
-    .container {
-      flex-direction: column;
-    }
-  
-    .productImage {
-      width: 150px;
-    }
-  
-    .data {
-      text-align: center;
-    }
-  
-    .data h3 {
-      margin: 30px 0 20px;
-    }
-  
-    .data p {
-      margin: 20px 0 30px;
-    }
-  
-    .quantity {
-      margin: 0 0 10px;
-    }
-  
-    .buttonContainer {
-      margin: 20px 0 20px;
-    }
-  }
+  @apply text-center md:float-right sm:float-right;
+}
+
+.buttonContainer img {
+  width: 20px;
+}

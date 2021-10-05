@@ -19,24 +19,23 @@ const ShopPCard = ({ product }) => {
   const dispatch = useDispatch();
   return (
     <div className={styles.container}>
-      <img className={styles.productImage} src={image} width={60} alt={title} />
+      <div className="bg-white">
+        <img
+          className={styles.productImage}
+          src={image}
+          width={60}
+          alt={title}
+        />
+      </div>
 
       <div className={styles.data}>
-        <h1>{truncate(title)}</h1>
+        <h3>{truncate(title)}</h3>
         <p>${price}</p>
       </div>
       <div>
         <span className={styles.quantity}>{quantity}</span>
       </div>
       <div className={styles.buttonContainer}>
-        {quantity > 0 && (
-          <button
-            className={styles.smallButton}
-            onClick={() => dispatch(increase(id))}
-          >
-            +
-          </button>
-        )}
         {quantity > 1 && (
           <button
             className={styles.smallButton}
@@ -51,6 +50,14 @@ const ShopPCard = ({ product }) => {
             onClick={() => dispatch(removeItem(id))}
           >
             <Image src={trash} alt="trash" />
+          </button>
+        )}
+        {quantity > 0 && (
+          <button
+            className={styles.smallButton}
+            onClick={() => dispatch(increase(id))}
+          >
+            +
           </button>
         )}
       </div>
