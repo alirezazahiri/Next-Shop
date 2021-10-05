@@ -5,7 +5,7 @@ const Home = () => {
   const router = useRouter()
   useEffect(() => {
     router.push("/products")
-  }, [])
+  }, [router])
   return <></>;
 };
 

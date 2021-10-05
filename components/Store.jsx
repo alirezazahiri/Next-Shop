@@ -18,7 +18,7 @@ const Store = ({ products }) => {
 
   useEffect(() => {
     dispatch(fetchProductsSuccess(products));
-  }, []);
+  }, [dispatch, products]);
 
   return (
     <div className={styles.container}>
