@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 // next 
 import Head from "next/head"
 
 // Redux
-import { useDispatch /*, useSelector */ } from "react-redux";
-import { fetchProductsSuccess } from "../redux/products/productsAction";
+import { useSelector } from "react-redux";
 
 // Components
 import StorePCard from "./common/StorePCard";
@@ -13,13 +12,8 @@ import StorePCard from "./common/StorePCard";
 // styles 
 import styles from "../styles/Store.module.scss";
 
-const Store = ({ products }) => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchProductsSuccess(products));
-  }, [dispatch, products]);
-
+const Store = () => {
+  const {products} = useSelector(state => state.productsState)
   return (
     <div className={styles.container}>
       <Head>

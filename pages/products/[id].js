@@ -1,6 +1,7 @@
 import Product from "../../components/Product.jsx";
+
 const productPage = () => {
-  return <Product />;
+    return <Product />;
 };
 
 export default productPage;

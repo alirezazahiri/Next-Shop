@@ -17,11 +17,12 @@
         position: relative;
     }
     span {
-        font-size: 16px;
+        font-size: 14px;
+        background-color: white;
         position: absolute;
         right: 8px;
-        top: 0;
-        padding: 1px;
+        top: 2px;
+        padding: 0px 4px;
         border-radius: 50%;
         display: block;
     }

@@ -1,19 +1,8 @@
 import Store from "../components/Store";
 
-//
-import axios from "axios";
+const products = () => {
 
-const products = ({ products }) => {
-  return <Store products={products}/>;
-};
-
-export const getServerSideProps = async () => {
-  const response = await axios.get("https://fakestoreapi.com/products");
-  const products = response.data;
-
-  return {
-    props: { products },
-  };
+  return <Store />;
 };
 
 export default products;
